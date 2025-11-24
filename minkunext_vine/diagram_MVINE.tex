@@ -53,26 +53,13 @@
         xlabel={{64, }},
         zlabel=64,
         fill=\ConvColor,
-        height=32,
-        width=2,
-        depth=32
-        }
-    };
-
-\draw [connection]  (bn1-east)    -- node {\midarrow} (conv2-west);
-
-\pic[shift={(1,0,0)}] at (0,0,0) 
-    {Box={
-        name=conv2,
-        caption= ,
-        xlabel={{64, }},
-        zlabel=64,
-        fill=\ConvColor,
         height=64,
         width=2,
         depth=64
         }
     };
+
+\draw [connection]  (bn1-east)    -- node {\midarrow} (conv2-west);
 
 \pic[shift={ (0,0,0) }] at (conv2-east) 
     {Box={
@@ -93,27 +80,29 @@
         xlabel={{64, }},
         %zlabel=64,
         fill=\ConvColor,
-        height=32,
+        height=64,
         width=2,
-        depth=32
+        depth=64
         }
     };
 
-\draw [connection]  (bn2-east)    -- node {\midarrow} (conv3-west);
 
-\pic[shift={ (0,0,0) }] at (conv3-east) 
-    {RightBandedBox={
-        name=pool1,
-        caption= ,
-        xlabel={{ 64, 64 }},
-        %zlabel=256,
-        fill=\FcReluColor,
-        bandfill=\FcReluColor,
-        height=40,
-        width={ 2 , 2 },
-        depth=40
-        }
-    };
+    \draw [connection]  (bn2-east)    -- node {\midarrow} (conv3-west);
 
+    \pic[shift={ (0,0,0) }] at (conv3-east) 
+        {RightBandedBox={
+            name=pool1,
+            caption= ,
+            xlabel={{ 64, 64 }},
+            %zlabel=256,
+            fill=\FcReluColor,
+            bandfill=\FcReluColor,
+            height=64,
+            width=1,
+            depth=64
+            }
+        };
+
+    \draw [connection]  (conv3-east)    -- node {\midarrow} (pool1-west);
 \end{tikzpicture}
 \end{document}
