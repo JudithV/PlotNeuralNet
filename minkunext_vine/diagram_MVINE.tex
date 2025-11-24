@@ -90,15 +90,14 @@
     \draw [connection]  (bn2-east)    -- node {\midarrow} (conv3-west);
 
     \pic[shift={ (0,0,0) }] at (conv3-east) 
-        {RightBandedBox={
+        {Box={
             name=pool1,
             caption= ,
-            xlabel={{ 64, 64 }},
+            xlabel={{ 64,}},
             %zlabel=256,
-            fill=\FcReluColor,
-            bandfill=\FcReluColor,
+            fill=\FcColor,
             height=64,
-            width=1,
+            width=2,
             depth=64
             }
         };
