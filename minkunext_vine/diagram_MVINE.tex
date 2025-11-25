@@ -28,6 +28,7 @@
         xlabel={{64, }},
         zlabel=512,
         fill=\ConvColor,
+        opacity=0.5,
         height=64,
         width=2,
         depth=64
@@ -35,7 +36,7 @@
     };
 
 \pic[shift={ (0,0,0) }] at (conv1-east) 
-    {Box={
+    {Box={  
         name=bn1,
         caption= ,
         fill=\PoolColor,
@@ -53,6 +54,7 @@
         xlabel={{64, }},
         zlabel=64,
         fill=\ConvColor,
+        opacity=0.5,
         height=64,
         width=2,
         depth=64
@@ -80,6 +82,7 @@
         xlabel={{64, }},
         %zlabel=64,
         fill=\ConvColor,
+        opacity=0.5,
         height=64,
         width=2,
         depth=64
@@ -89,13 +92,14 @@
 
     \draw [connection]  (bn2-east)    -- node {\midarrow} (conv3-west);
 
-    \pic[shift={ (0,0,0) }] at (conv3-east) 
+    \pic[shift={ (1,0,0) }] at (conv3-east) 
         {Box={
             name=pool1,
             caption= ,
             xlabel={{ 64,}},
             %zlabel=256,
             fill=\FcColor,
+            opacity=0.5,
             height=64,
             width=2,
             depth=64
